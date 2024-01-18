@@ -10,8 +10,20 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 import "@mdi/font/css/materialdesignicons.css";
-import "vuetify/styles";
-// import { getAnalytics } from "firebase/analytics";
+// import "vuetify/styles";
+import "primeflex/primeflex.css";
+import "primevue/resources/themes/lara-light-green/theme.css";
+import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
+
+import PrimeVue from "primevue/config";
+// import Lara from "@/presets/lara"; //import preset
+import AutoComplete from "primevue/autocomplete";
+import Button from "primevue/button";
+import Image from "primevue/image";
+import Card from "primevue/card";
+import Column from "primevue/column";
+import Dialog from "primevue/dialog";
 
 const vuetify = createVuetify({
   components,
@@ -20,9 +32,16 @@ const vuetify = createVuetify({
 });
 
 const app = createApp(App);
-
+/* eslint-disable */
 app.use(store); // Usa tu store Vuex
 app.use(vuetify);
+app.use(PrimeVue);
+app.component("AutoComplete", AutoComplete);
+app.component("Button", Button);
+app.component("Card", Card);
+app.component("Image ", Image);
+app.component("Column ", Column);
+app.component("Dialog ", Dialog);
 
 // Inicializa Firebase
 const firebaseConfig = {
